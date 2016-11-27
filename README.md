@@ -5,7 +5,7 @@ Usage
 
 1. Edit `lib/lj_backup.py` to set your username and password:
 
-    main('lj_username', 'password', '.')
+    `main('lj_username', 'password', '.')`
 
 2. Run `./lj_backup`
 
