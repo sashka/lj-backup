@@ -1,0 +1,36 @@
+{% extends base.html %}
+{% autoescape None %}
+
+{% block title %}{{ meta.title }} — {{ userinfo.username }}{% end %}
+
+{% block head_css %}
+    <link href="../simple.css" media="all" rel="stylesheet" />
+{% end %}
+
+{% block content %}
+    <div class="entry" data-id="{{ meta.entry_id }}" data-comments="{{ meta.comments }}">
+        {% if entry.subject %}<h1 class="entry__title">{{ entry.subject }}</h1>{% end %}
+        <div class="entry__date">{{ entry.eventtime }}</div>
+        <div class="entry__text">
+            {{ entry.event }}
+        </div>
+
+        {% if meta.tags %}
+            <div class="tags">Tags:
+                {% for tag in meta.tags %}
+                    <span class="tag"><a class="tag__link" href="../indexes/tags/{{ tag }}.html">{{ tag }}</a></span>
+                {% end %}
+            </div>
+        {% end %}
+    </div>
+
+    {% if entry.reply_count > 0 %}
+        <hr>
+        {{ entry.reply_count }} comments
+        <div class="entry__comments">
+            {{ comments }}
+        </div>
+    {% end %}
+
+    <a class="entry__link entry__link--outer" href="{{ entry.url }}">{{ entry.url }}</a>
+{% end %}

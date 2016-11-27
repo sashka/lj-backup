@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% end %}</title>
+
+    {% block head_css %}
+        <link href="simple.css" media="all" rel="stylesheet" />
+    {% end %}
+
+    {% block additional_head_css %}{% end %}
+    {% block head_js %}{% end %}
+    {% block additional_head_js %}{% end %}
+</head>
+<body>
+    {% block header %}
+    {% end %}
+
+    {% block content %}{% end %}
+
+    {% block footer %}
+        <hr>
+        <div id="footer">
+          © {{ meta.year }} <a href="/" class="username">{{ userinfo.username }}</a> (archived by <a href="http://github.com/sashka/lj_backup">lj_backup</a>)
+        </div>
+    {% end %}
+
+    {% block bottom_js %}{% end %}
+    {% block additional_bottom_js %}{% end %}
+</body>
+</html>
