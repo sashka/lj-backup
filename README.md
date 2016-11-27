@@ -19,3 +19,8 @@ Features
 1. Store everything in JSON.
 2. Download comments for every post.
 3. Render simple HTML pages.
+
+
+Known issues
+------------
+1. Not everything works out of box — basic download functions do, but media downloader doesn't :(
